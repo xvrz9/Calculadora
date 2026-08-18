@@ -1,0 +1,24 @@
+<div class="calculadora">
+  <input type="number" name="num1" [(ngModel)]="num1">
+  <input type="number" name="num2" [(ngModel)]="num2">
+
+  <select name="operador" [(ngModel)]="operador">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+
+  <button (click)="calcular()">Calcular</button>
+
+  <h2>Resultado: {{ resultado }}</h2>
+
+  <h3>Historial</h3>
+  <ul>
+    @for (item of historial; track $index) {
+      <li>{{ item }}</li>
+    }
+  </ul>
+</div>
+
+<router-outlet/>
